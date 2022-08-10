@@ -26,12 +26,40 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HTMLWebpackPlugin({
       filename: "index.html",
-      template: "src/pages/index.pug",
+      template: "src/pages/index.html",
+    }),
+    new HTMLWebpackPlugin({
+      filename: "endGame.html",
+      template: "src/pages/endGame.html",
+    }),
+    new HTMLWebpackPlugin({
+      filename: "game.html",
+      template: "src/pages/game.html",
+    }),
+    new HTMLWebpackPlugin({
+      filename: "pickGame.html",
+      template: "src/pages/pickGame.html",
+    }),
+    new HTMLWebpackPlugin({
+      filename: "leaderboard.html",
+      template: "src/pages/leaderboard.html",
+    }),
+    new HTMLWebpackPlugin({
+      filename: "name.html",
+      template: "src/pages/name.html",
+    }),
+    new HTMLWebpackPlugin({
+      filename: "practice.html",
+      template: "src/pages/practice.html",
+    }),
+    new HTMLWebpackPlugin({
+      filename: "rules.html",
+      template: "src/pages/rules.html",
     }),
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, "./src/assets"),
+          from: path.resolve(__dirname, "src/assets"),
           to: path.resolve(__dirname, "dist/assets"),
         },
       ],

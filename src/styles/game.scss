@@ -1,0 +1,396 @@
+#game {
+    padding: 85px 10px 60px 10px;
+
+    & h1 {
+        font-size: 4rem;
+        margin-bottom: 0rem;
+        margin-top: 1rem;
+    }
+}
+
+.attack__game {
+    padding: 5px 20px;
+
+    & h1 {
+        font-size: 4rem;
+        margin-bottom: 0rem;
+        margin-top: 1rem;
+    }
+}
+
+
+.solution__container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.8rem;
+    width: 100%;
+    border-radius: 4px;
+    font-size: 3rem;
+    max-width: 500rem;
+
+    & input {
+        background: rgb(29, 26, 26);
+        color: white;
+        font-size: 40px;
+        padding: 10px 10px 10px 5px;
+        display: block;
+        max-width: 300rem;
+        border: none;
+        border-radius: 0;
+        border-bottom: 1px solid white;
+        margin: 3rem 0 0 0;
+        text-align: center;
+
+        & input:focus {
+            outline: none;
+        }
+
+        & input::placeholder {
+            text-align: center;
+        }
+    }
+}
+
+
+#hud {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hud__prefix {
+    text-align: center;
+    font-size: 3rem;
+    margin: 0;
+}
+
+.hud__main--text {
+    text-align: center;
+    font-size: 3rem;
+    margin: 0;
+}
+
+#progressBar {
+    width: 20rem;
+    height: 3rem;
+    border: 0.2rem solid rgb(11, 223, 36);
+    margin-top: 2rem;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+#progressBarFull {
+    height: 100%;
+    background-color: rgb(11, 223, 36);
+    width: 0%;
+}
+
+#question {
+    font-size: 4rem;
+    text-align: center;
+}
+
+.box__equation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    margin-left: 52px;
+}
+
+#number__right,
+#number__left {
+    width: 6rem;
+    height: 6rem;
+    color: black;
+    border: none;
+    background-color: white;
+    font-size: 40px;
+    font-weight: 600;
+    padding: 0 10px;
+    text-align: center;
+    box-shadow: 7px 5px 2px #999;
+    margin-right: 10px;
+}
+
+.equation,
+.equal,
+.question__mark {
+    margin-right: 10px;
+}
+
+.show__answer {
+    display: flex;
+    justify-content: center;
+}
+
+#ans {
+    display: block;
+    font-size: 3rem;
+    margin: 0 auto 30px;
+}
+
+.timer p {
+    font-size: 20px;
+}
+
+
+.end__container {
+    display: flex;
+    justify-content: center;
+    margin-top: 55px;
+}
+
+#game__end {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.clock {
+    padding: 3px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    font-weight: bold;
+    height: 30%;
+    font-size: 24px;
+    margin-bottom: 50px;
+}
+
+.progress-ring {
+    position: absolute;
+   top: 15px;
+   left: 30px;
+    transform: translate(-50%, -50%);
+}
+
+.progress-ring__circle {
+    transition: 0.5s;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    stroke: rgb(11, 223, 36);
+}
+
+
+.danger {
+    stroke: rgb(243, 17, 28);
+    animation: danger 4s ease-in-out infinite;
+}
+
+.clock__numbers {
+    display: flex;
+    justify-content: center;
+}
+
+@keyframes danger {
+
+    0%,
+    100% {
+        transform: rotate(-90deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(-90deg) scale(1.05);
+    }
+
+    75% {
+        transform: rotate(-90deg) scale(0.8);
+    }
+}
+
+.user {
+    font-size: 3rem;
+}
+
+.game__timer {
+    margin-top: 90px;
+}
+
+.clock {
+    width: 30px;
+}
+
+.info__section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.success__score {
+    position: absolute;
+    left: 25%;
+    top: 36%;
+    animation: MoveUp 2s linear, fadeOut 2s ease-out;
+}
+
+.success__score:before {
+    content: "+1";
+    width: 30px;
+    height: 30px;
+    font-size: 3rem;
+}
+
+
+
+
+@keyframes MoveUp {
+    0% {
+        left: 26%;
+        top: 36%;
+    }
+
+    100% {
+        top: 0%;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.fail__score {
+    position: absolute;
+    left: 25%;
+    top: 36%;
+    animation: MoveUp 2s linear,
+        fadeOut 2s ease-out;
+}
+
+.fail__score:before {
+    content: "-1";
+    width: 30px;
+    height: 30px;
+    font-size: 3rem;
+}
+
+.horizontal-shake {
+    animation: horizontal-shaking 0.35s;
+}
+
+@keyframes horizontal-shaking {
+    0% {
+        transform: translateX(0)
+    }
+
+    25% {
+        transform: translateX(5px)
+    }
+
+    50% {
+        transform: translateX(-5px)
+    }
+
+    75% {
+        transform: translateX(5px)
+    }
+
+    100% {
+        transform: translateX(0)
+    }
+}
+
+@media screen and (max-width:1170px) {
+
+    .attack__game h1 {
+        font-size: 3rem;
+    }
+
+    #game h1 {
+        font-size: 3rem;
+    }
+
+    .user {
+        font-size: 2rem;
+    }
+
+    .hud__prefix {
+        font-size: 2rem;
+    }
+
+    .attack__game #question {
+        font-size: 3rem;
+        margin-top: 2rem;
+    }
+
+    #game #question {
+        margin-top: 2rem;
+    }
+}
+
+@media screen and (max-width:768px) {
+    #progressBar {
+        width: 15rem;
+    }
+
+    .hud__prefix {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width:576px) {
+
+    #hud {
+        flex-direction: column;
+        margin-top: 40px;
+    }
+
+    .game__timer {
+        margin-top: 60px;
+    }
+
+    .info__section {
+        margin-top: 30px;
+    }
+
+    #game h1 {
+        font-size: 2.5rem;
+    }
+
+    .attack__game h1 {
+        font-size: 2.5rem;
+    }
+
+    .attack__game #question {
+        font-size: 2.3rem;
+    }
+
+    #game #question {
+        font-size: 2.3rem;
+    }
+
+    .user {
+        font-size: 1.5rem;
+    }
+
+    .hud__prefix {
+        font-size: 1.5rem;
+    }
+
+    #number__right,
+    #number__left {
+        width: 4rem;
+        height: 5rem;
+    }
+
+    .solution__container input {
+        font-size: 30px;
+        width: 70%;
+    }
+
+    .box__equation {
+        font-size: 50px;
+        margin-left: 13px;
+    }
+
+    #ans {
+        text-align: center;
+        font-size: 2rem;
+        margin: 10px auto 30px;
+    }
+}

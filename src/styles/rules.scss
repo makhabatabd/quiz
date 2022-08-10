@@ -1,0 +1,42 @@
+.rules {
+    padding: 70px 10px;
+
+    & h2 {
+        font-size: 3rem;
+        margin: 0 0 20px 0;
+    }
+
+    & p {
+        margin: 10px 0;
+        letter-spacing: 1px;
+        font-size: 2rem;
+    }
+
+    & span {
+        color: rgb(8, 92, 255);
+        font-size: 2rem;
+    }
+}
+
+.btn__rules {
+    margin-top: 5px;
+}
+
+@media screen and (max-width:768px) {
+    .rules {
+        padding: 35px 10px;
+
+        & p {
+            margin: 14px 0;
+            font-size: 1.5rem;
+        }
+
+        & span {
+            font-size: 1.5rem;
+        }
+    }
+
+    .btn__rules {
+        margin-top: 60px;
+    }
+}

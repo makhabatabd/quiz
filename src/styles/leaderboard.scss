@@ -1,0 +1,38 @@
+#highScores {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 170px 0;
+}
+
+#finalScore {
+    font-size: 4rem;
+}
+
+#highScoresList {
+    font-size: 3rem;
+    list-style: none;
+    margin-bottom: 4rem;
+    padding: 0;
+}
+
+.high__score {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+@media screen and (max-width:576px) {
+    #finalScore {
+        font-size: 3rem;
+    }
+
+    #highScoresList {
+        font-size: 2.1rem;
+        margin-bottom: 2rem;
+    }
+
+    .high__score {
+        font-size: 2.1rem;
+    }
+}
