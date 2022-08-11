@@ -1,3 +1,47 @@
+.modal__outter {
+    position: fixed;
+    background-color: #00000097;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    inset: 0;
+    z-index: 50;
+    overflow-y: auto;
+}
+
+.modal__inner {
+    position: relative;
+    z-index: 110;
+    width: 650px;
+    background-color: rgb(29, 26, 26);
+    box-shadow: 5px 10px 14px 14px #E0E722;
+    padding: 50px;
+    text-align: center;
+    display: block;
+    margin: 0px auto;
+    transition: all .5s ease-in-out;
+    opacity: 1;
+    animation: fade 2s linear;
+
+
+
+    @keyframes fade {
+
+        0%,
+        30% {
+            opacity: 0.5
+        }
+
+        30%,
+        100% {
+            opacity: 1
+        }
+    }
+
+}
+
 #game {
     padding: 85px 10px 60px 10px;
 
@@ -53,6 +97,12 @@
 
 
 #hud {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#hude {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -143,7 +193,7 @@
 
 #game__end {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 }
 
 .clock {
@@ -159,8 +209,8 @@
 
 .progress-ring {
     position: absolute;
-   top: 15px;
-   left: 30px;
+    top: 15px;
+    left: 30px;
     transform: translate(-50%, -50%);
 }
 
@@ -213,7 +263,7 @@
 .info__section {
     display: flex;
     justify-content: space-between;
-    margin-top: 30px;
+    margin-top: 0px;
 }
 
 .success__score {
@@ -228,6 +278,16 @@
     width: 30px;
     height: 30px;
     font-size: 3rem;
+}
+
+.pause__container {
+    display: flex;
+    justify-content: center;
+}
+
+#pause {
+    text-align: center;
+    background: linear-gradient(90deg, #fff709 0%, #f0dd06 100%);
 }
 
 
@@ -331,11 +391,19 @@
     .hud__prefix {
         font-size: 1.5rem;
     }
+
+    .success__score:before {
+        font-size: 2rem;
+    }
+
+    .fail__score:before {
+        font-size: 2rem;
+    }
 }
 
 @media screen and (max-width:576px) {
 
-    #hud {
+    #hude {
         flex-direction: column;
         margin-top: 40px;
     }

@@ -6,14 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Page</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./game.css">
 </head>
 
 <body>
     <div class="container">
         <div class="justify-center flex-column attack__game">
-            <div id="hud">
+            <div id="hude">
                 <div id="hud__item">
                     <p id="progressText" class="hud__prefix">
                         Question
@@ -78,8 +76,18 @@
             </div>
             <div id="score__animation"></div>
         </div>
+        <div class="pause__container">
+            <button class="btn" id="pause">Pause</button>
+        </div>
+        <div class="modal__outter">
+            <div class="modal__inner">
+                <button id="continue" class="btn">Continue the game</button>
+                <br />
+                <button class="btn" id="menu-end-game">End game</button>
+            </div>
+        </div>
+
     </div>
-    <script src="./js/game.js"></script>
 </body>
 
 </html>

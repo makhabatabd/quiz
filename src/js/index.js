@@ -1,7 +1,7 @@
 import "../styles/gather.scss";
 import "./name";
-import "./endGame";
 import "./game";
+import "./endGame";
 import "./pickGame";
 import "./leaderboard";
 import "./practice";

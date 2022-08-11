@@ -6,9 +6,9 @@ if (window.location.pathname === "/practice.html") {
   const scoreText = document.getElementById("score");
   const math = document.getElementById("math");
   const endGame = document.getElementById("game__end");
-  const correct = document.getElementById("correct");
-  const incorrect = document.getElementById("incorrect");
-  const recentScore = document.getElementById("recentScore");
+  // const correct = document.getElementById("correct");
+  // const incorrect = document.getElementById("incorrect");
+  // const recentScore = document.getElementById("recentScore");
   const user = document.querySelector(".user");
   const animation = document.getElementById("score__animation");
   const score_animation = document.querySelector(".hud__item");
@@ -120,9 +120,17 @@ if (window.location.pathname === "/practice.html") {
     const score = {
       name: username,
       score: scores,
+    };
+
+    const recentScore = {
+      name: username,
+      score: scores,
       correct: scores,
       incorrect: wrong,
     };
+
+    localStorage.setItem("recentScore", JSON.stringify(recentScore));
+
     if (practiceScores.length === 0) {
       practiceScores.push(score);
     }
@@ -137,8 +145,6 @@ if (window.location.pathname === "/practice.html") {
         if (item.name === username && item.score < scores) {
           console.log("same");
           item.score = scores;
-          item.correct = scores;
-          item.incorrect = wrong;
         }
       });
     }
