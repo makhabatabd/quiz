@@ -8,6 +8,6 @@ import "./pickGame";
 import "./leaderboard";
 import "./practice";
 
-if (window.location.pathname == "/index.html") {
+if (window.location.pathname.endsWith("/index.html")) {
   localStorage.setItem("mode", JSON.stringify("practice"));
 }

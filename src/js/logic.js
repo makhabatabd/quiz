@@ -1,6 +1,6 @@
 if (
-  window.location.pathname === "/game.html" ||
-  window.location.pathname === "/practice.html"
+  window.location.pathname.endsWith("/game.html") ||
+  window.location.pathname.endsWith("/practice.html")
 ) {
   const num_right = document.getElementById("number_right");
   const num_left = document.getElementById("number_left");
@@ -13,6 +13,9 @@ if (
   const user = document.querySelector(".user");
   const animation = document.getElementById("score-animation");
   const score_animation = document.querySelector(".hud__item");
+  let modal__outter = document.querySelector(".modal__outter");
+  const restart = document.getElementById("continue");
+  const menuEnd = document.getElementById("menu-end-game");
   let isPause = false;
   let scores = 0;
 
@@ -230,6 +233,23 @@ if (
   endGame.addEventListener("click", (e) => {
     e.preventDefault();
     saveToLocalStorage();
-    window.location.assign("/endGame.html");
+    window.location.assign("endGame.html");
+  });
+
+  const pause = document.getElementById("pause");
+  pause.addEventListener("click", () => {
+    isPause = true;
+    modal__outter.style.display = "flex";
+  });
+
+  menuEnd.addEventListener("click", () => {
+    modal__outter.style.display = "none";
+    saveToLocalStorage();
+    window.location.assign("endGame.html");
+  });
+
+  restart.addEventListener("click", () => {
+    isPause = false;
+    modal__outter.style.display = "none";
   });
 }

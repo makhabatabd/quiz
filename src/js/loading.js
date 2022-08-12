@@ -1,4 +1,4 @@
-if (window.location.pathname === "/loading.html") {
+if (window.location.pathname.endsWith("/loading.html")) {
   const loaderSeconds = document.querySelector(".game-start span");
   const mode = JSON.parse(localStorage.getItem("mode"));
   const text = document.getElementById("game-start__text");
@@ -16,9 +16,9 @@ if (window.location.pathname === "/loading.html") {
 
   setInterval(() => {
     if (mode === "practice") {
-      window.location.assign("/practice.html");
+      window.location.assign("practice.html");
     } else {
-      window.location.assign("/game.html");
+      window.location.assign("game.html");
     }
   }, 4000);
 }

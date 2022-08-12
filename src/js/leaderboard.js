@@ -1,4 +1,4 @@
-if (window.location.pathname === "/leaderboard.html") {
+if (window.location.pathname.endsWith("/leaderboard.html")) {
   const highScoresList = document.querySelector("#high-scores-list");
   const attackScores = JSON.parse(localStorage.getItem("attackScores")) || [];
   const practiceScores =

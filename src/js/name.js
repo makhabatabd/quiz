@@ -1,4 +1,4 @@
-if (window.location.pathname === "/name.html") {
+if (window.location.pathname.endsWith("/name.html")) {
   const username = document.querySelector("#username");
   const startGame = document.querySelector("#start");
   const span = document.querySelector(".username__span");
@@ -19,7 +19,7 @@ if (window.location.pathname === "/name.html") {
     localStorage.setItem("usernames", JSON.stringify(username.value));
     if (!username.value) span.style.opacity = 1;
     if (username.value) {
-      window.location.assign("/pickGame.html");
+      window.location.assign("pickGame.html");
     }
   }
 

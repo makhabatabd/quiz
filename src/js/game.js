@@ -1,8 +1,7 @@
-if (window.location.pathname === "/game.html") {
+if (window.location.pathname.endsWith("/game.html")) {
   const bell = document.querySelector("#audio");
   let modal__outter = document.querySelector(".modal__outter");
   const restart = document.getElementById("continue");
-  const menuEnd = document.getElementById("menu-end-game");
   let isPause = false;
 
   const circle = document.querySelector(".progress-ring__circle");
@@ -46,7 +45,7 @@ if (window.location.pathname === "/game.html") {
         bell.play();
         setTimeout(() => {
           saveToLocalStorage();
-          window.location.assign("/endGame.html");
+          window.location.assign("endGame.html");
         }, 3000);
       }
     }
@@ -60,11 +59,6 @@ if (window.location.pathname === "/game.html") {
   pause.addEventListener("click", () => {
     isPause = true;
     modal__outter.style.display = "flex";
-  });
-
-  menuEnd.addEventListener("click", () => {
-    modal__outter.style.display = "none";
-    window.location.assign("/endGame.html");
   });
 
   restart.addEventListener("click", () => {

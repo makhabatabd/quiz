@@ -1,4 +1,4 @@
-if (window.location.pathname === "/endGame.html") {
+if (window.location.pathname.endsWith("/endGame.html")) {
   const correct = document.getElementById("correct");
   const incorrect = document.getElementById("incorrect");
 
