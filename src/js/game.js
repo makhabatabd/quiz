@@ -159,17 +159,18 @@ if (window.location.pathname === "/game.html") {
       solution.style.color = "green";
       solution.innerHTML = "Good Job! Correct! Next";
       animation.classList.add("success__score");
+      correct++;
       counter++;
+      incrementScore(SCORE_POINTS);
       if (counter >= 5) {
         levelCounter++;
         counter = 0;
       }
-      incrementScore(SCORE_POINTS);
     } else {
       solution.style.color = "red";
       solution.innerHTML = `Correct Answer is ${result}! Try the next one!`;
       decrementScore(SCORE_POINTS);
-      wrong += 1;
+      wrong++;
       if (wrong >= 1) {
         counter = 0;
       }
@@ -187,7 +188,7 @@ if (window.location.pathname === "/game.html") {
   }
 
   document.addEventListener("keydown", function (e) {
-    if (e.key === "Enter") check();
+    if (isPause === false && e.key === "Enter") check();
   });
 
   const incrementScore = (num) => {
@@ -212,14 +213,14 @@ if (window.location.pathname === "/game.html") {
     const score = {
       name: username,
       score: scores,
-      correct: scores,
+      correct: correct,
       incorrect: wrong,
     };
 
     const recentScore = {
       name: username,
       score: scores,
-      correct: scores,
+      correct: correct,
       incorrect: wrong,
     };
 
@@ -238,7 +239,7 @@ if (window.location.pathname === "/game.html") {
       attackScores.map((item) => {
         if (item.name === username && item.score < scores) {
           item.score = scores;
-          item.correct = scores;
+          item.correct = correct;
           item.incorrect = wrong;
         }
       });
