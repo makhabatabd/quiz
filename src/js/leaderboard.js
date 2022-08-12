@@ -1,5 +1,5 @@
 if (window.location.pathname === "/leaderboard.html") {
-  const highScoresList = document.querySelector("#highScoresList");
+  const highScoresList = document.querySelector("#high-scores-list");
   const attackScores = JSON.parse(localStorage.getItem("attackScores")) || [];
   const practiceScores =
     JSON.parse(localStorage.getItem("practiceScores")) || [];
@@ -9,7 +9,7 @@ if (window.location.pathname === "/leaderboard.html") {
   function attack() {
     highScoresList.innerHTML = attackScores
       .map((item) => {
-        return `<li class="high__score">${item.name} - ${item.score}</li>`;
+        return `<li class="high-score">${item.name} - ${item.score}</li>`;
       })
       .join("");
     localStorage.setItem("mode", JSON.stringify("time__attack"));
@@ -21,7 +21,7 @@ if (window.location.pathname === "/leaderboard.html") {
   function practice() {
     highScoresList.innerHTML = practiceScores
       .map((item) => {
-        return `<li class="high__score">${item.name} - ${item.score}</li>`;
+        return `<li class="high-score">${item.name} - ${item.score}</li>`;
       })
       .join("");
     localStorage.setItem("mode", JSON.stringify("practice"));

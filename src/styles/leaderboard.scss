@@ -1,4 +1,4 @@
-#highScores {
+#high-scores {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6,33 +6,33 @@
     padding: 170px 0;
 }
 
-#finalScore {
+#final-score {
     font-size: 4rem;
 }
 
-#highScoresList {
+#high-scores-list {
     font-size: 3rem;
     list-style: none;
     margin-bottom: 4rem;
     padding: 0;
 }
 
-.high__score {
+.high-score {
     font-size: 3rem;
     margin-bottom: 1rem;
 }
 
 @media screen and (max-width:576px) {
-    #finalScore {
+    #final-score {
         font-size: 3rem;
     }
 
-    #highScoresList {
+    #high-scores-list {
         font-size: 2.1rem;
         margin-bottom: 2rem;
     }
 
-    .high__score {
+    .high-score {
         font-size: 2.1rem;
     }
 }

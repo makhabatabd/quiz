@@ -14,10 +14,10 @@
 .modal__inner {
     position: relative;
     z-index: 110;
-    width: 650px;
+    max-width: 600px;
     background-color: rgb(29, 26, 26);
     box-shadow: 5px 10px 14px 14px #E0E722;
-    padding: 50px;
+    padding: 40px;
     text-align: center;
     display: block;
     margin: 0px auto;
@@ -63,7 +63,7 @@
 }
 
 
-.solution__container {
+.solution-container {
     display: flex;
     justify-content: center;
     margin-bottom: 0.8rem;
@@ -113,7 +113,7 @@
     margin: 0;
 }
 
-.hud__main--text {
+.hud__main_text {
     text-align: center;
     font-size: 3rem;
     margin: 0;
@@ -140,7 +140,7 @@
     text-align: center;
 }
 
-.box__equation {
+.box-equation {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -148,8 +148,8 @@
     margin-left: 52px;
 }
 
-#number__right,
-#number__left {
+#number_right,
+#number_left {
     width: 6rem;
     height: 6rem;
     color: black;
@@ -165,11 +165,11 @@
 
 .equation,
 .equal,
-.question__mark {
+.question-mark {
     margin-right: 10px;
 }
 
-.show__answer {
+.show-answer {
     display: flex;
     justify-content: center;
 }
@@ -185,13 +185,13 @@
 }
 
 
-.end__container {
+.end-container {
     display: flex;
     justify-content: center;
     margin-top: 55px;
 }
 
-#game__end {
+#game_end {
     text-align: center;
     margin-bottom: 1rem;
 }
@@ -227,7 +227,7 @@
     animation: danger 4s ease-in-out infinite;
 }
 
-.clock__numbers {
+.clock-numbers {
     display: flex;
     justify-content: center;
 }
@@ -252,7 +252,7 @@
     font-size: 3rem;
 }
 
-.game__timer {
+.game-timer {
     margin-top: 90px;
 }
 
@@ -280,7 +280,7 @@
     font-size: 3rem;
 }
 
-.pause__container {
+.pause-container {
     display: flex;
     justify-content: center;
 }
@@ -459,6 +459,11 @@
     .fail__score:before {
         font-size: 2rem;
     }
+
+    .modal__inner {
+        padding: 20px;
+    }
+
 }
 
 @media screen and (max-width:576px) {
@@ -468,7 +473,7 @@
         margin-top: 40px;
     }
 
-    .game__timer {
+    .game-timer {
         margin-top: 60px;
     }
 
@@ -500,18 +505,18 @@
         font-size: 1.5rem;
     }
 
-    #number__right,
-    #number__left {
+    #number_right,
+    #number_left {
         width: 4rem;
         height: 5rem;
     }
 
-    .solution__container input {
+    .solution-container input {
         font-size: 30px;
         width: 70%;
     }
 
-    .box__equation {
+    .box-equation {
         font-size: 50px;
         margin-left: 13px;
     }
@@ -520,5 +525,9 @@
         text-align: center;
         font-size: 2rem;
         margin: 10px auto 30px;
+    }
+
+    .modal__inner {
+        padding: 20px 5px 5px 5px;
     }
 }

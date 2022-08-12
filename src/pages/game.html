@@ -5,87 +5,88 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Page</title>
+    <title>Game</title>
 </head>
 
 <body>
-    <div class="container">
-        <div class="justify-center flex-column attack__game">
-            <div id="hude">
-                <div id="hud__item">
-                    <p id="progressText" class="hud__prefix"></p>
-                    <div id="progressBar">
-                        <div id="progressBarFull">
+    <main>
+        <div class="container">
+            <div class="justify-center flex-column attack__game">
+                <div id="hude">
+                    <div id="hud__item">
+                        <p id="progressText" class="hud__prefix"></p>
+                        <div id="progressBar">
+                            <div id="progressBarFull">
+                            </div>
                         </div>
                     </div>
+                    <div class="game-timer">
+                        <figure class="clock">
+                            <div class="clock-numbers">
+                                <div class="mins">0</div>
+                                <div>:</div>
+                                <div class="secs">00</div>
+                            </div>
+                            <audio src="http://soundbible.com/mp3/service-bell_daniel_simion.mp3" id="audio"></audio>
+                            <svg class="progress-ring" height="120" width="120">
+                                <circle class="progress-ring__circle" stroke-width="8" fill="transparent" r="50" cx="60"
+                                    cy="60" />
+                            </svg>
+                        </figure>
+                    </div>
                 </div>
-                <div class="game__timer">
-                    <figure class="clock">
-                        <div class="clock__numbers">
-                            <div class="mins">0</div>
-                            <div>:</div>
-                            <div class="secs">00</div>
-                        </div>
-                        <audio src="http://soundbible.com/mp3/service-bell_daniel_simion.mp3" id="audio"></audio>
-                        <svg class="progress-ring" height="120" width="120">
-                            <circle class="progress-ring__circle" stroke-width="8" fill="transparent" r="50" cx="60"
-                                cy="60" />
-                        </svg>
-                    </figure>
+                <div class="info__section align-center">
+                    <div class="hud__item">
+                        <p class="hud__prefix">
+                            Score
+                        </p>
+                        <h1 class="hud__main_text" id="score">
+                            0
+                        </h1>
+                    </div>
+                    <div>
+                        <p class="user"></p>
+                    </div>
+                </div>
+                <h1 id="question">What is the answer to this equation?</h1>
+                <div class="show-answer"><span id="ans"></span></div>
+                <div class="box-equation">
+                    <div class="box-equation_left">
+                        <input type="text" id="number_left">
+                    </div>
+                    <div class="equation">
+                        <p id="math">+</p>
+                    </div>
+                    <div class="box-equation_right">
+                        <input type="text" id="number_right">
+                    </div>
+                    <div class="equal">
+                        <p>=</p>
+                    </div>
+                    <div class="question-mark">
+                        <p>?</p>
+                    </div>
+                </div>
+                <div class="solution-container">
+                    <input type="text" id="answer" placeholder="Write here">
+                </div>
+                <div class="end-container">
+                    <button class="btn" id="game_end">End game</button>
+                </div>
+                <div id="score-animation"></div>
+            </div>
+            <div class="pause-container">
+                <button class="btn" id="pause">Pause</button>
+            </div>
+            <div class="modal__outter">
+                <div class="modal__inner">
+                    <button id="continue" class="btn">Continue the game</button>
+                    <br />
+                    <button class="btn" id="menu-end-game">End game</button>
                 </div>
             </div>
-            <div class="info__section align-center">
-                <div class="hud__item">
-                    <p class="hud__prefix">
-                        Score
-                    </p>
-                    <h1 class="hud__main--text" id="score">
-                        0
-                    </h1>
-                </div>
-                <div>
-                    <p class="user"></p>
-                </div>
-            </div>
-            <h1 id="question">What is the answer to this equation?</h1>
-            <div class="show__answer"><span id="ans"></span></div>
-            <div class="box__equation">
-                <div class="box__equation--left">
-                    <input type="text" id="number__left">
-                </div>
-                <div class="equation">
-                    <p id="math">+</p>
-                </div>
-                <div class="box__equation--right">
-                    <input type="text" id="number__right">
-                </div>
-                <div class="equal">
-                    <p>=</p>
-                </div>
-                <div class="question__mark">
-                    <p>?</p>
-                </div>
-            </div>
-            <div class="solution__container">
-                <input type="text" id="answer" placeholder="Write here">
-            </div>
-            <div class="end__container">
-                <button class="btn" id="game__end">End game</button>
-            </div>
-            <div id="score__animation"></div>
         </div>
-        <div class="pause__container">
-            <button class="btn" id="pause">Pause</button>
-        </div>
-        <div class="modal__outter">
-            <div class="modal__inner">
-                <button id="continue" class="btn">Continue the game</button>
-                <br />
-                <button class="btn" id="menu-end-game">End game</button>
-            </div>
-        </div>
-
-    </div>
+    </main>
 </body>
 
 </html>
