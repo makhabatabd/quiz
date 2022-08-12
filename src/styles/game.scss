@@ -43,7 +43,7 @@
 }
 
 #game {
-    padding: 85px 10px 60px 10px;
+    padding: 30px 10px 60px 10px;
 
     & h1 {
         font-size: 4rem;
@@ -109,7 +109,6 @@
 }
 
 .hud__prefix {
-    text-align: center;
     font-size: 3rem;
     margin: 0;
 }
@@ -124,9 +123,10 @@
     width: 20rem;
     height: 3rem;
     border: 0.2rem solid rgb(11, 223, 36);
-    margin-top: 2rem;
+    margin-top: 1rem;
     border-radius: 50px;
     overflow: hidden;
+    margin-bottom: 2rem;
 }
 
 #progressBarFull {
@@ -353,6 +353,66 @@
     100% {
         transform: translateX(0)
     }
+}
+
+.game-start {
+    &__body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        z-index: 30;
+
+        position: fixed;
+
+        width: 100vw;
+        height: 100vh;
+
+        background-color: rgb(29, 26, 26);
+        transition: 0.7s;
+
+        span {
+            font-size: 130px;
+            color: white;
+            animation: mymove 1s infinite;
+        }
+    }
+}
+
+#game-start__text {
+    display: none;
+    font-size: 130px;
+    color: #0bdf24;
+    animation: mymove 1s infinite;
+}
+
+@keyframes mymove {
+    0% {
+        font-size: 130px;
+    }
+
+    50% {
+        font-size: 200px;
+    }
+
+    100% {
+        font-size: 130px;
+    }
+}
+
+.nums {
+
+    font-size: 5rem;
+    height: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    text-align: center;
+    animation: count 0.1s cubic-bezier(0.1, 0.1, 1, 1) 1;
+
 }
 
 @media screen and (max-width:1170px) {

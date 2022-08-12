@@ -5,39 +5,75 @@ if (window.location.pathname === "/practice.html") {
   const solution = document.getElementById("ans");
   const scoreText = document.getElementById("score");
   const math = document.getElementById("math");
+  const progressText = document.getElementById("progressText");
+  const progressBarFull = document.getElementById("progressBarFull");
   const endGame = document.getElementById("game__end");
-  // const correct = document.getElementById("correct");
-  // const incorrect = document.getElementById("incorrect");
-  // const recentScore = document.getElementById("recentScore");
   const user = document.querySelector(".user");
   const animation = document.getElementById("score__animation");
   const score_animation = document.querySelector(".hud__item");
 
-  let num1 = Math.floor(Math.random() * 20 + 1);
-  let num2 = Math.floor(Math.random() * 20 + 1);
-
   let scores = 0;
+  let result;
   let wrong = 0;
-  let questionCounter = 0;
+  let correct = 0;
+  let counter = 0;
+  let levelCounter;
+
+  const equations = ["+", "-", "/", "*"];
+
+  let num1 = Math.floor(Math.random() * (10 - 1 + 1) + 1);
+  let num2 = Math.floor(Math.random() * (10 - 1 + 1) + 1);
 
   num_left.value = num1;
   num_right.value = num2;
 
-  let result;
-
-  const equations = ["+", "-", "/", "*"];
-
   const SCORE_POINTS = 1;
-  const MAX_QUESTIONS = 5;
+  const MAX_SCORE_PER_LEVEL = 5;
+
   function startGame() {
-    questionCounter = 0;
+    levelCounter = 1;
     scores = 0;
+    wrong = 0;
+    correct = 0;
+    counter = 0;
     getRandomEquation();
+  }
+
+  function calculateNum() {
+    if (levelCounter === 1) {
+      num1 = Math.floor(Math.random() * (10 - 1 + 1) + 1);
+      num2 = Math.floor(Math.random() * (10 - 1 + 1) + 1);
+      num_left.value = num1;
+      num_right.value = num2;
+    } else if (levelCounter === 2) {
+      levelCounter = 2;
+      num1 = Math.floor(Math.random() * (30 - 11 + 1) + 11);
+      num2 = Math.floor(Math.random() * (30 - 11 + 1) + 11);
+      num_left.value = num1;
+      num_right.value = num2;
+    } else if (levelCounter === 3) {
+      levelCounter = 3;
+      num1 = Math.floor(Math.random() * (50 - 31 + 1) + 31);
+      num2 = Math.floor(Math.random() * (50 - 31 + 1) + 31);
+      num_left.value = num1;
+      num_right.value = num2;
+    } else if (levelCounter === 4) {
+      levelCounter = 4;
+      num1 = Math.floor(Math.random() * (70 - 51 + 1) + 51);
+      num2 = Math.floor(Math.random() * (70 - 51 + 1) + 51);
+      num_left.value = num1;
+      num_right.value = num2;
+    }
   }
 
   function getRandomEquation() {
     const questionIndex =
       equations[Math.floor(Math.random() * equations.length)];
+    progressText.innerText = `Level ${levelCounter}`;
+    progressBarFull.style.width = `${(counter / MAX_SCORE_PER_LEVEL) * 100}%`;
+    if (progressBarFull.style.width === "100%") {
+      progressBarFull.style.width = "0%";
+    }
     math.innerText = questionIndex;
     if (questionIndex === "+") {
       result = num2 + num1;
@@ -58,9 +94,7 @@ if (window.location.pathname === "/practice.html") {
         num_right.value = num2;
         break;
       }
-
-      num1 = Math.floor(Math.random() * 20 + 1);
-      num2 = Math.floor(Math.random() * 20 + 1);
+      calculateNum();
     }
   }
 
@@ -68,26 +102,32 @@ if (window.location.pathname === "/practice.html") {
     if (answer.value == result) {
       solution.style.color = "green";
       solution.innerHTML = "Good Job! Correct! Next";
-      incrementScore(SCORE_POINTS);
       animation.classList.add("success__score");
+      correct++;
+      counter++;
+      incrementScore(SCORE_POINTS);
+      if (counter >= 5) {
+        levelCounter++;
+        counter = 0;
+      }
     } else {
       solution.style.color = "red";
       solution.innerHTML = `Correct Answer is ${result}! Try the next one!`;
       decrementScore(SCORE_POINTS);
       wrong++;
+      if (wrong >= 1) {
+        counter = 0;
+      }
       animation.classList.add("fail__score");
       score_animation.classList.add("horizontal-shake");
     }
     setTimeout(() => {
       answer.value = "";
-      num1 = Math.floor(Math.random() * 20 + 1);
-      num2 = Math.floor(Math.random() * 20 + 1);
+      calculateNum();
       getRandomEquation();
       animation.classList.remove("success__score");
       score_animation.classList.remove("horizontal-shake");
       animation.classList.remove("fail__score");
-      num_right.value = num2;
-      num_left.value = num1;
     }, 1000);
   }
 
@@ -125,7 +165,7 @@ if (window.location.pathname === "/practice.html") {
     const recentScore = {
       name: username,
       score: scores,
-      correct: scores,
+      correct: correct,
       incorrect: wrong,
     };
 

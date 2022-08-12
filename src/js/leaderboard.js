@@ -21,7 +21,7 @@ if (window.location.pathname === "/leaderboard.html") {
   function practice() {
     highScoresList.innerHTML = practiceScores
       .map((item) => {
-        return `<li class="high-score">${item.name} - ${item.score}</li>`;
+        return `<li class="high__score">${item.name} - ${item.score}</li>`;
       })
       .join("");
     localStorage.setItem("mode", JSON.stringify("practice"));

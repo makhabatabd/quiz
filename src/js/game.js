@@ -57,6 +57,7 @@ if (window.location.pathname === "/game.html") {
         seconds = 0;
         bell.play();
         setTimeout(() => {
+          saveToLocalStorage();
           window.location.assign("/endGame.html");
         }, 3000);
       }
@@ -213,8 +214,6 @@ if (window.location.pathname === "/game.html") {
     const score = {
       name: username,
       score: scores,
-      correct: correct,
-      incorrect: wrong,
     };
 
     const recentScore = {
@@ -239,8 +238,6 @@ if (window.location.pathname === "/game.html") {
       attackScores.map((item) => {
         if (item.name === username && item.score < scores) {
           item.score = scores;
-          item.correct = correct;
-          item.incorrect = wrong;
         }
       });
     }
@@ -264,7 +261,6 @@ if (window.location.pathname === "/game.html") {
     modal__outter.style.display = "flex";
   });
 
-  console.log(endGame);
   menuEnd.addEventListener("click", () => {
     modal__outter.style.display = "none";
     window.location.assign("/endGame.html");

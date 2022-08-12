@@ -1,5 +1,6 @@
 import "../styles/gather.scss";
 import "./name";
+import "./loading";
 import "./game";
 import "./endGame";
 import "./pickGame";

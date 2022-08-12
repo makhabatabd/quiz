@@ -33,6 +33,10 @@ module.exports = {
       template: "src/pages/endGame.html",
     }),
     new HTMLWebpackPlugin({
+      filename: "loading.html",
+      template: "src/pages/loading.html",
+    }),
+    new HTMLWebpackPlugin({
       filename: "game.html",
       template: "src/pages/game.html",
     }),
